@@ -276,7 +276,22 @@ const Agg = async () => {
             // { $group: { _id: { location: "$location" } } },
             // { $out: "output" }
 
+            //$cond
+            // {
+            //     $project:
+            //     {
+            //         item: 1,
+            //         discount:
+            //         {
+            //             $cond: { if: { $gt: ["$price", 1] }, then: 30, else: 20 }
+            //         }
 
+            //     }
+            // }
+
+
+            //$addFields
+            { $addFields: { roomPlusfloor: { $sum: { $add: ['$floor', '$noOfbedrooms'] } } } }
         ])
         console.log(result)
     }
