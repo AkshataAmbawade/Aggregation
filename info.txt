@@ -1,0 +1,45 @@
+Q.Why do we use aggregation pipeline?
+=>The basic find() function of mongoDb is not that sufficient to do documents query. It is a multi stage pipeline where processing happens on each and every stage and each stage's output pass to the next stage 
+
+There are three ways to perform aggregation in MongoDB:
+-the map-reduce function
+-single-purpuse aggregation
+-the aggregation pipeline
+
+Each stage takes documents as a input and perform operations on it and returns documents as a output
+
+
+
+
+
+properties : (stageOperator)
+
+1.$match : it is used to filter documents by certain query
+2.$group: Group documents by certain criteria .Basically it's use for grouping of a documents
+3.$sort: sort objects in acending and descending
+4.$sum
+5.$add
+6.$count : counts the nubers of the documents
+7.$limit :Limits numbers of the documents
+8.$skip : skip the amount of the documents
+9.$addtofield
+10.$output
+11.$out : writes the result of the aggregation in another collection
+12.$merge
+13.$cond
+14.$lookup
+15.$unwind
+16.$project: filters the fields in the documents
+17.$arrayElementAt
+18.$reverseArray
+19.$sortArray
+20.$push
+
+
+
+Aggregation Expression
+-Eexpression refers to the name of the field input documents
+"$<fieldName>"
+
+aggregation Expression is nothing but the values from  key and value pairs
+aggregation Expression should always be in double quotes otherwise it will be consider as variable
