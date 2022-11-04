@@ -17,23 +17,24 @@ properties : (stageOperator)
 1.$match : it is used to filter documents by certain query
 2.$group: Group documents by certain criteria .Basically it's use for grouping of a documents
 3.$sort: sort objects in acending and descending
-4.$sum
-5.$add
+4.$sum   :  sums numeric values for the documents in each group
+5.$add : adds the two Expression
 6.$count : counts the nubers of the documents
 7.$limit :Limits numbers of the documents
 8.$skip : skip the amount of the documents
-9.$addtofield
+9.$addtFields: add a inserted field to an output
 10.$output
 11.$out : writes the result of the aggregation in another collection
 12.$merge
-13.$cond
+13.$cond : gives condition 
 14.$lookup
-15.$unwind
+15.$unwind: is used to perform the aggregation operation on the array fields
 16.$project: filters the fields in the documents
-17.$arrayElementAt
-18.$reverseArray
+17.$arrayElemAt: it will give the fields according to an index of an array
+18.$reverseArray: It will reverse the array
 19.$sortArray
 20.$push
+21.$type  : it will take the value of the certain field and output is BSON type
 
 
 

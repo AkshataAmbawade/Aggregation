@@ -291,7 +291,7 @@ const Agg = async () => {
 
 
             //$addFields
-            { $addFields: { roomPlusfloor: { $sum: { $add: ['$floor', '$noOfbedrooms'] } } } }
+        //     { $addFields: { roomPlusfloor: { $sum: { $add: ['$floor', '$noOfbedrooms'] } } } }
         ])
         console.log(result)
     }
