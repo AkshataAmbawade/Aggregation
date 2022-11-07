@@ -185,15 +185,18 @@ const Agg = async () => {
         const result = await Housep.aggregate([
             //{ $match: { location: 'Delhi' } },  //stage one
             // { $match: { price: 2 } },          //stage two
-            // { $match: { noOfbedrooms: 3 } },   //saage three
+            // { $match: { noOfbedrooms: 3 } },   //stage three
             // { $group: { _id: "$location" } },  //groupt by only one field
             // {$group:{_id:"$company.location.country"}}  //this one is for example that we can group by nested field also
             // { $group: { _id: "$price" } } , //group by only one field
-            // { $group: { _id: { location: "$location", price: "$price", noOfbedrooms: "$noOfbedrooms" } } } //group by more than one field
+            // { $group: { _id: { location: "$location", price: "$price", noOfbedrooms: "$noOfbedrooms" } } },//group by more than one field
+            // { $count: "count" }
 
 
             //Let's now combine $match and $group stages
             // { $match: { location: "Bangalore" } },
+            // { $project: { location: 1, _id: 0 } },
+            // { $count: "count" }
             // { $group: { _id: { noOfbedrooms: "$noOfbedrooms", floor: "$floor", price: "$price" } } },
 
             //Let's change the order that means first we will do $group and then we will do $match
@@ -291,7 +294,10 @@ const Agg = async () => {
 
 
             //$addFields
-        //     { $addFields: { roomPlusfloor: { $sum: { $add: ['$floor', '$noOfbedrooms'] } } } }
+            //     { $addFields: { roomPlusfloor: { $sum: { $add: ['$floor', '$noOfbedrooms'] } } } }
+
+         //$lookup refer mongoose/populate.js
+
         ])
         console.log(result)
     }

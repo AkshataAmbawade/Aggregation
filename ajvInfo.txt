@@ -1,0 +1,4 @@
+Ajv is json schema validator
+
+
+First install ajv by command==> npm install ajv
